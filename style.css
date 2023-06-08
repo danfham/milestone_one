@@ -6,3 +6,30 @@ body {
     background-repeat: no-repeat;
     padding:20px;
 }
+
+main{
+    border: 1px;
+    border-color: aqua;
+    border-style: solid;
+    display: inline-block;
+    height: 95vh;
+    width: 95vw;
+}
+
+#scorebug1 {
+    border: 1px;
+    border-color: aqua;
+    border-style: solid;
+    color:whitesmoke;
+    justify-content: flex-start;
+    width: 200px;
+}
+
+#scorebug2 {
+    border: 1px;
+    border-color: aqua;
+    border-style: solid;
+    color:whitesmoke;
+    justify-content: flex-end;
+    width: 200px;
+}
