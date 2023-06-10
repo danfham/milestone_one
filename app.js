@@ -10,6 +10,7 @@ const scoreElement = document.querySelector('.scoreboard.left');
 let score = 0;
 let operand1 = 0; 
 let operand2 = 0; 
+let plyrNum = 1;
 
 // generate a question that we can then solve!
 formulaForm.addEventListener('submit', function(e) {
@@ -19,7 +20,6 @@ formulaForm.addEventListener('submit', function(e) {
   operand1 = Math.floor(Math.random() * 10) + 1;
   operand2 = Math.floor(Math.random() * 10) + 1;
   const expression = `${operand1} × ${operand2}`;
-
 
   // Display the next expression
   formulaInput.placeholder = expression;
@@ -34,9 +34,9 @@ answerForm.addEventListener('submit', function(e) {
   
     // Validate the answer
     if (parseInt(answerGiven) === operand1 * operand2) {
-      notification.textContent = 'Correct answer!';
+      notification.textContent = 'OOOOOHHHH YEAAAA!';
       score++;
-      scoreElement.textContent = 'Score: ' + score;
+      scoreElement.textContent = 'Player'+plyrNum+' Score: ' + score;
       moveCharacter();
     } else {
       notification.textContent = 'Wrong answer. Try again.';
@@ -46,9 +46,8 @@ answerForm.addEventListener('submit', function(e) {
 
 function moveCharacter() {
   // Move the character here
-  // Example code to move the character to a random position within the game container:
-  const containerWidth = document.getElementById('gameContainer').offsetWidth;
-  const containerHeight = document.getElementById('gameContainer').offsetHeight;
+  const containerWidth = document.getElementById('main').offsetWidth;
+  const containerHeight = document.getElementById('main').offsetHeight;
 
   const randomLeft = Math.floor(Math.random() * (containerWidth - 50));
   const randomTop = Math.floor(Math.random() * (containerHeight - 50));

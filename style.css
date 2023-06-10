@@ -1,3 +1,5 @@
+/* layout information is defined */
+
 body {
     background-image: url("assets/images/scifi_wallpaper.png");
     background-size:cover;
@@ -7,7 +9,9 @@ body {
     padding:20px;
 }
 
-main{
+#actionArea{
+    position: relative;
+
     border: 1px;
     border-color: aqua;
     border-style: solid;
@@ -17,7 +21,7 @@ main{
 }
 
 .scoreboard {
-    position: fixed;
+    position: absolute;
     padding: 10px;
     font-size: 18px;
     color: white;
@@ -26,7 +30,7 @@ main{
     border-style: solid;
   }
   
-  .left {
+.left {
     top: 10;
     left: 10;
     background-color: grey; /* Adjust color as needed */
@@ -34,71 +38,80 @@ main{
     border-color: aqua;
     border-style: solid;
   }
-  
-  .right {
-    top: 1.6em;
-    right: 1.65em;
+
+.right {
+    top: 0;
+    right: 0;
     background-color: grey; /* Adjust color as needed */
     border: 1px;
     border-color: aqua;
     border-style: solid;
-  }
-
-
-  /*#main {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
-    background-color: #ccc; /* Adjust color as needed */
-  /*}*/
-  
-  
-  #character {
+}
+ 
+/* Character CSS is defined */
+#character1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    bottom: 50px;
+    left: 100px;
     width: 50px;
     height: 50px;
     background-color: #000; /* Adjust color as needed */
     transition: transform 0.3s ease-in-out;
     transform: translate(-50%, -50%);
-  }
+}
   
-  #notification {
+#spaceship {
     position: absolute;
-    top: 10px;
+    bottom: 0px;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 18px;
-    color: red; /* Adjust color as needed */
-  }
+    width: 50px;
+    height: 150px;
+    background-color: #000; /* Adjust color as needed */
+    transform: translate(-50%, -50%);
+}
   
-  #formulaForm {
+/* Actions are defined */
+#notification {
+    position: absolute;
+    top: 50;
+    left: 50;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: red; /* Adjust color as needed */
+
+}
+  
+#formulaForm {
     position: absolute;
     bottom: 600px;
     left: 50%;
     transform: translateX(-60%);
-  }
+}
   
-  #formulaInput {
+#formulaInput {
+    position: absolute;
     padding: 5px;
     font-size: 16px;
-  }
+    transform: translateX(-100%);
+}
   
-  #answerForm {
+#answerForm {
     position: absolute;
     bottom: 550px;
     left: 50%;
     transform: translateX(-60%);
-  }
+}
   
-  #answerInput {
+#answerInput {
+    position: absolute;
     padding: 10px;
     font-size: 16px;
-  }
+    transform: translateX(-100%);
+}
 
-  button {
+button {
+    position: absolute;
     padding: 5px 10px;
     font-size: 16px;
-  }
+}
+

@@ -17,23 +17,25 @@
             heros: https://trevor-pupkin.itch.io/outer-buddies
         -->
         <main>
+            <div id="actionArea">
+                <div class="scoreboard left">Player 1 Score: 0</div>
+                <div class="scoreboard right">Player 2 Score: 0</div>
+                <div id="main">
+                    <div id="character1"></div>
+                    <div id="spaceship"></div>
+                    <div id="notification"></div>
+                    
+                    <form id="formulaForm">
+                        <input type="text" id="formulaInput" placeholder="Your Trial ...">
+                        <button type="submit">Generate Expression</button>
+                    </form>
 
-            <div class="scoreboard left">Player 1 Score: 0</div>
-            <div class="scoreboard right">Player 2 Score: 0</div>
-            <div id="main">
-                <div id="character"></div>
-                <div id="notification"></div>
-                <form id="formulaForm">
-                    <input type="text" id="formulaInput" placeholder="Enter formula">
-                    <button type="submit">Generate Expression</button>
-                </form>
-                <form id="answerForm">
-                    <input type="text" id="answerInput" placeholder="Your Answer!?">
-                    <button type="submit">Submit!</button>
-                </form>
-            </div>
-
-
+                    <form id="answerForm">
+                        <input type="text" id="answerInput" placeholder="Your Answer!?">
+                        <button type="submit">Submit!</button>
+                    </form>
+                </div>
+             </div>
         </main>
 
         <script src="app.js"></script>
