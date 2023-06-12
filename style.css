@@ -55,26 +55,37 @@ body {
     left: 100px;
     width: 50px;
     height: 50px;
-    background-color: #000; /* Adjust color as needed */
+    background-image: url("assets/characters/Cyborg/Cyborg_run.png");
     transition: transform 0.3s ease-in-out;
     transform: translate(-50%, -50%);
 }
-  
+
+#enemy1 {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    background-image: url("assets/characters/Cyborg/Cyborg_run.png");
+    transition: transform 0.3s ease-in-out;
+    transform: translate(-150%, -50%);
+}
+
 #spaceship {
     position: absolute;
-    bottom: 0px;
+    bottom: 20px;
     left: 50%;
-    width: 50px;
-    height: 150px;
-    background-color: #000; /* Adjust color as needed */
+    width: 150px;
+    height: 100px;
+    background-image: url("assets/characters/Nairan/Designs_Base/PNGs/Nairan-Battlecruiser-Base.png");
     transform: translate(-50%, -50%);
 }
   
 /* Actions are defined */
 #notification {
     position: absolute;
-    top: 50;
-    left: 50;
+    top: 0%;
+    left: 50%;
     transform: translateX(-50%);
     font-size: 50px;
     color: red; /* Adjust color as needed */

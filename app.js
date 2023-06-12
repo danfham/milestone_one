@@ -47,11 +47,8 @@ answerForm.addEventListener('submit', function(e) {
 function moveCharacter() {
   // Move the character here
   const containerWidth = document.getElementById('main').offsetWidth;
-  const containerHeight = document.getElementById('main').offsetHeight;
 
   const randomLeft = Math.floor(Math.random() * (containerWidth - 50));
-  const randomTop = Math.floor(Math.random() * (containerHeight - 50));
 
   character.style.left = randomLeft + 'px';
-  character.style.top = randomTop + 'px';
 }
