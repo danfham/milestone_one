@@ -16,8 +16,8 @@ const ship = document.getElementById('spaceship');
 
 // set global variables 
 let score = 0;
-let operand1 = 0; 
-let operand2 = 0; 
+let val1 = 0; 
+let val2 = 0; 
 let plyrNum = 1;
 let distance= 500;
 let turn = 0;
@@ -29,9 +29,9 @@ formulaForm.addEventListener('submit', function(e) {
   e.preventDefault();
 
   // Generate a random multiplication expression
-  operand1 = Math.floor(Math.random() * 10) + 1;
-  operand2 = Math.floor(Math.random() * 10) + 1;
-  const expression = `${operand1} × ${operand2}`;
+  val1 = Math.floor(Math.random() * 10) + 1;
+  val2 = Math.floor(Math.random() * 10) + 1;
+  const expression = `${val1} × ${val2}`;
 
   countdownTimer(duration, () => {
     // Timer completed, perform any desired actions here
@@ -53,14 +53,12 @@ answerForm.addEventListener('submit', function(e) {
     //turn++
   
     // Validate the answer
-    if (parseInt(answerGiven) === operand1 * operand2) {
+    if (parseInt(answerGiven) === val1 * val2) {
       stopTimer=true;
       notification.textContent = 'OOOOOHHHH YEAAAA!';
       score++;
       scoreElement.textContent = 'Player'+plyrNum+' Score: ' + score;
       
-
-
       // todo: need to be more dynamic based on which player ...      
       character1.style.left=moveCharacter(character1.style.left)
       
