@@ -3,14 +3,20 @@ const formulaInput = document.getElementById('formulaInput');
 const answerForm = document.getElementById('answerForm');
 const answerInput = document.getElementById('answerInput');
 const notification = document.getElementById('notification');
-const character = document.getElementById('character');
+const character1 = document.getElementById('character1');
 const scoreElement = document.querySelector('.scoreboard.left');
+
 
 // set global variables 
 let score = 0;
 let operand1 = 0; 
 let operand2 = 0; 
 let plyrNum = 1;
+let distance= 500;
+let turn = 0;
+
+
+
 
 // generate a question that we can then solve!
 formulaForm.addEventListener('submit', function(e) {
@@ -31,24 +37,46 @@ answerForm.addEventListener('submit', function(e) {
     e.preventDefault();
   
     const answerGiven = answerInput.value;
+    // placeholder space to evaluate turn based on click of submit button; even turns for player 2 
+    //turn++
   
     // Validate the answer
     if (parseInt(answerGiven) === operand1 * operand2) {
       notification.textContent = 'OOOOOHHHH YEAAAA!';
       score++;
       scoreElement.textContent = 'Player'+plyrNum+' Score: ' + score;
-      moveCharacter();
+      
+      // todo: need to be more dynamic based on which player ...      
+      character1.style.left=moveCharacter(character1.style.left)
+      
     } else {
+
       notification.textContent = 'Wrong answer. Try again.';
+      alert(enemy1.style.left)
+      enemy1.style.left=moveEnemy(enemy1.style.left)
+      alert(enemy1.style.left)
     }
   
   });
 
-function moveCharacter() {
+
+// need to add in a declalaration of which character to move.
+function moveCharacter(position) {
   // Move the character here
-  const containerWidth = document.getElementById('main').offsetWidth;
+  if(!isNaN(parseInt(position))){
+    position=(parseInt(position) + 110)+'px';
+  } else {
+    position+=210+'px';
+  }
+  return position
+}
 
-  const randomLeft = Math.floor(Math.random() * (containerWidth - 50));
-
-  character.style.left = randomLeft + 'px';
+function moveEnemy(position) {
+  // Move the character here
+  if(!isNaN(parseInt(position))){
+    position=(parseInt(position) + 100)+'px';
+  } else {
+    position+=-250+'px';
+  }
+  return position
 }
