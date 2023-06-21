@@ -4,7 +4,8 @@ const formulaInput = document.getElementById('formulaInput');
 const answerForm = document.getElementById('answerForm');
 const answerInput = document.getElementById('answerInput');
 const notification = document.getElementById('notification');
-const scoreElement = document.querySelector('.scoreboard.left');
+const scoreElement1 = document.querySelector('.scoreboard.left');
+const scoreElement2 = document.querySelector('.scoreboard.right');
 const resetButton = document.getElementById('reset');
 const timerElement = document.getElementById('timer');
 
@@ -20,7 +21,7 @@ let val1 = 0;
 let val2 = 0; 
 let plyrNum = 1;
 let distance= 500;
-let turn = 0;
+let turn = 1;
 
 
 // generate a question that we can then solve!
@@ -31,8 +32,7 @@ formulaForm.addEventListener('submit', function(e) {
   val1 = Math.floor(Math.random() * 10) + 1;
   val2 = Math.floor(Math.random() * 10) + 1;
   const expression = `${val1} × ${val2}`;
-
-  
+ 
 
   // Display the next expression
   notification.textContent = expression;
@@ -47,15 +47,20 @@ answerForm.addEventListener('submit', function(e) {
     const answerGiven = answerInput.value;
     
     // placeholder space to evaluate turn based on click of submit button; even turns for player 2 
-    //turn++
-  
-    alert(answerGiven)
+    turn+=1  
+    plyrNum=(turn%2)+1;
+
     // Validate the answer
     if (parseInt(answerGiven) === val1 * val2 && !isNaN(answerGiven)) {
       stopTimer=true;
       notification.textContent = 'OOOOOHHHH YEAAAA!';
       score++;
-      scoreElement.textContent = 'Player'+plyrNum+' Score: ' + score;
+      if (plyrNum === 1){
+        scoreElement1.textContent = 'Player '+plyrNum+' Score: ' + score;
+      } else {
+        scoreElement2.textContent = 'Player '+plyrNum+' Score: ' + score;
+      }
+      
       
       // todo: need to be more dynamic based on which player ...      
       character1.style.left=moveCharacter(character1.style.left)
@@ -93,7 +98,7 @@ function moveCharacter(position) {
 function moveEnemy(position) {
   // Move the character here
   if(!isNaN(parseInt(position))){
-    position=(parseInt(position) + 20)+'%';
+    position=((parseInt(position) + 20)+(turn*10))+'%';
   } else {
     position+=0+'%';
   }
