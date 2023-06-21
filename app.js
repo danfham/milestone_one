@@ -21,8 +21,7 @@ let val2 = 0;
 let plyrNum = 1;
 let distance= 500;
 let turn = 0;
-let duration = 30;
-let stopTimer=false;
+
 
 // generate a question that we can then solve!
 formulaForm.addEventListener('submit', function(e) {
@@ -33,10 +32,6 @@ formulaForm.addEventListener('submit', function(e) {
   val2 = Math.floor(Math.random() * 10) + 1;
   const expression = `${val1} × ${val2}`;
 
-  countdownTimer(duration, () => {
-    // Timer completed, perform any desired actions here
-    alert('Countdown timer completed!');
-  });
 
   // Display the next expression
   formulaInput.placeholder = expression;
@@ -66,7 +61,8 @@ answerForm.addEventListener('submit', function(e) {
       checkCollision(false); //checking ship collision; hence dino -> false
 
     } else {
-      notification.textContent = 'Oops! The correct answer is: '+operand1*operand2+'. Try again.';
+
+      notification.textContent = 'Oops! The correct answer is: '+val1*val2+'. Try again.';
       enemy1.style.left=moveEnemy(enemy1.style.left)
       checkCollision(true); //checking dino collision -> true
 
@@ -96,7 +92,7 @@ function moveEnemy(position) {
   if(!isNaN(parseInt(position))){
     position=(parseInt(position) + 20)+'%';
   } else {
-    position+=-20+'%';
+    position+=0+'%';
   }
   return position;
 }
@@ -134,27 +130,6 @@ function checkCollision(flag){
 
 }
 
-function countdownTimer(duration, answer, callback) {
-  let timer = duration;
-  let minutes, seconds;
-
-  const interval = setInterval(() => {
-    minutes = Math.floor((timer / 60) % 60).toString().padStart(2, '0');
-    seconds = Math.floor(timer % 60).toString().padStart(2, '0');
-
-    const timerText = `${minutes}:${seconds}`;
-    timerElement.textContent = timerText;
-
-    if (timer <= 0) {
-      clearInterval(interval);
-      if (callback) {
-        callback();
-      }
-    }
-
-    timer--;
-  }, 1000);
-}
 
 
 
