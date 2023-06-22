@@ -24,7 +24,6 @@ let distance= 500;
 let turn = 1;
 
 
-
 // generate a question that we can then solve!
 formulaForm.addEventListener('submit', function(e) {
   e.preventDefault();
