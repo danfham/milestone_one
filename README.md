@@ -1,10 +1,12 @@
-# milestone_one
+Welcome to Space Dinos ... in Space! 
 
-       <!-- muliplication game where 2 users will roll a dice to determine who has the first turn
-            whoever gets highest number will answer a times table question, a correct answer will
-            move their character towards a centerally located ship sprite from either the left or right.
-            a wrong answer will move an 'enemy' from off screen towards the user. if the monster catches 
-            that player loses, first to reach the ship wins 
+SDS! is a muliplication educational game wherein two players collaborate to escape the vicious Red Rex to board their Spaceship and escape the fearsome Planet JPEG! The player prompts the spirt of the planet, affectionately known as Sir Submit, to receive their Multiplication trial. Once an offering (answer) is ready, the users ... submit ... to the good sir and receive their judgement. A correct answer leads to our fateful hero, O. Perand, moving one step closer to saftey. An incorrect answer however, and ole Red leaps to lunch. 
+
+After for every turn the stakes are raised, and the distance the dino can move across the screen is increased. So, even if you and your intreprid crew reach nearly reach the end ... Red can get ya! 
+
+Assets used with permission from: 
             ship: https://foozlecc.itch.io/void-fleet-pack-2
             background: https://kayillustrations.itch.io/parallax-terrestrial-planet
             heros: https://trevor-pupkin.itch.io/outer-buddies
+
+Credit to members of the NCSU SD 11 course; ChatGPT
