@@ -137,7 +137,7 @@ function checkCollision(flag){
     ) {
       // Collision detected
       character1.style.display = 'none';
-      notification.textContent = 'Welcome Aboard Captain';
+      notification.textContent = 'Welcome Aboard Captain, you win!';
       resetButton.style.display ='block'
       answerForm.style.display='none';
       formulaForm.style.display='none'; 
