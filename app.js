@@ -24,9 +24,11 @@ let distance= 500;
 let turn = 1;
 
 
+
 // generate a question that we can then solve!
 formulaForm.addEventListener('submit', function(e) {
   e.preventDefault();
+
 
   // Generate a random multiplication expression
   val1 = Math.floor(Math.random() * 10) + 1;
@@ -48,12 +50,15 @@ answerForm.addEventListener('submit', function(e) {
     
     // placeholder space to evaluate turn based on click of submit button; even turns for player 2 
     turn+=1  
+    
     plyrNum=(turn%2)+1;
+
+    notification.textContent = 'Player '+plyrNum+'s Turn!';   
 
     // Validate the answer
     if (parseInt(answerGiven) === val1 * val2 && !isNaN(answerGiven)) {
       stopTimer=true;
-      notification.textContent = 'OOOOOHHHH YEAAAA!';
+      notification.textContent = 'OOOOOHHHH YEAAAA!'+'\n'+'Well Done Player '+plyrNum;
       score++;
       if (plyrNum === 1){
         scoreElement1.textContent = 'Player '+plyrNum+' Score: ' + score;
@@ -98,7 +103,7 @@ function moveCharacter(position) {
 function moveEnemy(position) {
   // Move the character here
   if(!isNaN(parseInt(position))){
-    position=((parseInt(position) + 20)+(turn*10))+'%';
+    position=((parseInt(position) + 20)+(turn*2.5))+'%';
   } else {
     position+=0+'%';
   }

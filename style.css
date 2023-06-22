@@ -81,12 +81,12 @@ body {
 
 #notification {
     position: absolute;
-    top: 25%;
+    top: 22.5%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 50px;
     color: red; /* Adjust color as needed */
-    align-content: center;
+    text-align: center;
 
 }
   
